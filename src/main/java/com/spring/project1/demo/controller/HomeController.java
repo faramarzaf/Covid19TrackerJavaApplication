@@ -17,17 +17,21 @@ public class HomeController {
 
     @GetMapping("/")
     public String home(Model model) {
-        List<LocationStats> allStats = coronaVirusDataService.getAllStats();
-
-        int totalReportedCases = allStats.stream().mapToInt(stat -> stat.getLatestTotalCases()).sum(); // sum() Returns the sum of elements in this stream.
-        int totalNewCases = allStats.stream().mapToInt(stat -> stat.getDiffFromPrevDay()).sum();
-
-        model.addAttribute("locationStats", allStats);
-        model.addAttribute("totalReportedCases",totalReportedCases);
-        model.addAttribute("totalNewCases",totalNewCases);
-
+        prepareHomeData(model);
         return "home";
     }
 
+    private void prepareHomeData(Model model) {
+        List<LocationStats> allStats = coronaVirusDataService.getAllStats();
 
+        int totalReportedCases1 = allStats.stream().mapToInt(stat -> stat.getLatestTotalCases()).sum();// sum() Returns the sum of elements in this stream.
+        int totalNewCases1 = allStats.stream().mapToInt(stat -> stat.getDiffFromPrevDay()).sum();
+
+        String totalReportedCases = String.format("%,d", totalReportedCases1);
+        String totalNewCases = String.format("%,d", totalNewCases1);
+
+        model.addAttribute("locationStats", allStats);
+        model.addAttribute("totalReportedCases", totalReportedCases);
+        model.addAttribute("totalNewCases", totalNewCases);
+    }
 }
