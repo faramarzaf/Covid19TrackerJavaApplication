@@ -11,12 +11,20 @@
 <body>
 
 
-<!--<p th:text="${locationStats}"></p>-->
 
 <!--<div class="container"> makes margin and padding nice-->
+<div style="text-align:center ;font-weight:bold;font-size:30px" class="shadow p-3 mb-5 bg-white rounded">Coronavirus Tracker Application</div>
+
+
 <div class="container">
-    <h1 style="text-align:center">Coronavirus Tracker Application</h1>
-    <p>This application lists the current number of cases reported across the globe</p>
+
+
+
+    <p class="fw-normal">This application lists the current number of cases reported across the globe.</p>
+
+    <p class="fw-light"> All information you see on this page is taken from this repository
+        <a href="https://github.com/CSSEGISandData/COVID-19">Link</a>
+    </p>
 
 
     <div class="alert alert-success" role="alert">
@@ -37,7 +45,7 @@
             <th>State</th>
             <th>Country</th>
             <th>Total cases reported</th>
-            <th>Changes since lat day</th>
+            <th>Changes since last day</th>
         </tr>
 
         <tr th:each="locationStat : ${locationStats}">
