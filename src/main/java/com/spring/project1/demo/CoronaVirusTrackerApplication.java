@@ -12,4 +12,5 @@ public class CoronaVirusTrackerApplication {
 		SpringApplication.run(CoronaVirusTrackerApplication.class, args);
 	}
 //https://www.creative-tim.com/
+	//https://www.codeply.com/p/sIIXzlAW3V
 }

@@ -1,0 +1,9 @@
+#con .well {
+    height:400px;
+}
+
+#nav.affix {
+    position: fixed;
+    top: 0;
+    width: 100%
+}
