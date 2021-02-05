@@ -21,6 +21,25 @@ public class HomeController {
         return "home";
     }
 
+    @GetMapping("/new")
+    public String newcase(Model model) {
+        prepareHomeData(model);
+        return "cases";
+    }
+
+    @GetMapping("/dead")
+    public String dead(Model model) {
+        prepareHomeData(model);
+        return "dead";
+    }
+
+
+    @GetMapping("/recovered")
+    public String recovered(Model model) {
+        prepareHomeData(model);
+        return "recovered";
+    }
+
     private void prepareHomeData(Model model) {
         List<LocationStats> allStats = coronaVirusDataService.getAllStats();
 
