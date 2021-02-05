@@ -47,7 +47,7 @@ day of week (0 - 6) (Sunday=0 or 7)
 */
 
     @PostConstruct
-    @Scheduled(cron = "30 * * * * *")
+    @Scheduled(cron = "* * 1 * * *")
     public void fetchVirusData() throws IOException, InterruptedException {
         List<LocationStats> newStats = new ArrayList<>();
         HttpClient client = HttpClient.newHttpClient();
