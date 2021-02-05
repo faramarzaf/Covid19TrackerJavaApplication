@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Coronavirus Tracker Application</title>
-    <meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8"/>
+    <meta http-equiv="Content-Type" charset="UTF-8" name="viewport" content="width=device-width, text/html, initial-scale=1"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
@@ -17,67 +17,92 @@
             integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
-<!--    <script type="text/javascript" th:src="@{/jscript/main.js}"></script>-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .bg {
+            height: auto;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 1;
+            display: block;
+            width: 100%;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+
+        .container:hover .image {
+            opacity: 0.3;
+        }
+
+        .container:hover .middle {
+            opacity: 1;
+        }
+
+        .text {
+            background-color: #e7d0ac;
+            color: white;
+            font-size: 16px;
+            padding: 6px 15px;
+            border-radius: 5px;
+        }
+    </style>
 
 </head>
 
 <body>
 
 <div th:insert="fragments/navbar.html::myNavBar"></div>
-<div th:insert="fragments/button.html::myButton"></div>
+
+<div class="bg"></div>
 
 <div class="container">
 
 
-    <p class="fw-normal">This application lists the current number of cases reported across the globe.</p>
-
-    <p class="fw-light"> All information you see on this page is taken from this repository
-        <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">Link</a> <!-- open tab when click on link target="_blank"-->
-    </p>
-
-
-    <div class="alert alert-success" role="alert">
-        <h1 class="display-4" th:text="${totalReportedCases}"></h1>
-        <hr>
-        <p class="mb-0">Total cases reported as of today.</p>
+    <img src="https://external-preview.redd.it/SiiCZ3v_f6IHj4C5Eyi8EzZhcygX23cuZsRo2sYob6A.png?auto=webp&s=c8112bd8549501d12e127dd7dbca4f5e04c222dc"
+         alt="Avatar" class="image" style="width:100%">
+    <div class="middle">
+        <div class="text">This application lists the current number of cases reported across the globe.</div>
     </div>
 
-
-    <div class="alert alert-warning" role="alert">
-        <span>New Cases reported since previous day</span>
-        <span th:text="${totalNewCases}"></span>
-    </div>
-
-
-    <table class="table">
-        <tr>
-            <th>State</th>
-            <th>Country</th>
-            <th>Total cases reported</th>
-            <th>Changes since last day</th>
-        </tr>
-        <tbody id="myTable">
-        <tr th:each="locationStat : ${locationStats}">
-            <td th:text="${locationStat.state}"></td>
-            <td th:text="${locationStat.country}"></td>
-            <td th:text="${locationStat.latestTotalCases}">0</td>
-            <td th:text="${locationStat.diffFromPrevDay}">0</td>
-        </tr>
-        </tbody>
-    </table>
 </div>
 
-<script>
-    $(document).ready(function () {
-        $("#myInput").on("keyup", function () {
-            var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function () {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        });
-    });
-</script>
 
+<footer class="bg-light text-center text-lg-start">
+
+    <div class="text-center p-3" style="background-color: rgb(231,217,195)">
+        <p class="fw-normal"> All information you see on this page is taken from this repository
+            <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">Link</a> <!-- open tab when click on link target="_blank"-->
+        </p>
+        <p class="fw-light"> © 2021 Copyright:
+            <a href="https://github.com/faramarzaf" target="_blank">FaramarzAfzali</a>
+        </p>
+    </div>
+
+</footer>
 
 </body>
 
