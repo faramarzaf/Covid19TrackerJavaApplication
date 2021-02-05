@@ -7,8 +7,8 @@
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+-->
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/tailwind.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -17,85 +17,122 @@
             integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/hover_home.css}"/>
+
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <!--
+        <style>
+            body, html {
+                height: 100%;
+                margin: 0;
+            }
 
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-        }
+            .container {
+                position: relative;
+                width: 100%;
+            }
 
-        .container {
-            position: relative;
-        }
+            .image {
+                opacity: 1;
+                display: block;
+                width: 100%;
+                height: auto;
+                transition: .5s ease;
+                backface-visibility: hidden;
+            }
 
-        .bg {
-            height: auto;
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            opacity: 1;
-            display: block;
-            width: 100%;
-            transition: .5s ease;
-            backface-visibility: hidden;
-        }
+            .middle {
+                transition: .5s ease;
+                opacity: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                -ms-transform: translate(-50%, -50%);
+                text-align: center;
+            }
 
-        .middle {
-            transition: .5s ease;
-            opacity: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            text-align: center;
-        }
+            .container:hover .image {
+                opacity: 0.3;
+            }
 
+            .container:hover .middle {
+                opacity: 1;
+            }
 
-        .container:hover .image {
-            opacity: 0.3;
-        }
-
-        .container:hover .middle {
-            opacity: 1;
-        }
-
-        .text {
-            background-color: #e7d0ac;
-            color: white;
-            font-size: 16px;
-            padding: 6px 15px;
-            border-radius: 5px;
-        }
-    </style>
+            .text {
+                background-color: #d7bf9b;
+                color: white;
+                font-size: 16px;
+                padding: 6px 15px;
+                border-radius: 5px;
+            }
+        </style>-->
 
 </head>
 
 <body>
 
 <div th:insert="fragments/navbar.html::myNavBar"></div>
-
-<div class="bg"></div>
-
+<!--
 <div class="container">
-
 
     <img src="https://external-preview.redd.it/SiiCZ3v_f6IHj4C5Eyi8EzZhcygX23cuZsRo2sYob6A.png?auto=webp&s=c8112bd8549501d12e127dd7dbca4f5e04c222dc"
          alt="Avatar" class="image" style="width:100%">
+
     <div class="middle">
         <div class="text">This application lists the current number of cases reported across the globe.</div>
     </div>
+
+</div>-->
+
+<!--<section id="content">
+    <div class="container">
+        <div id="main">
+            <div class="imageselect row add-clearfix image-imagebox">
+                <div class="col-sm-6">
+                    <article class="imagebox">
+                        <figure>
+
+                                <img src="https://external-preview.redd.it/SiiCZ3v_f6IHj4C5Eyi8EzZhcygX23cuZsRo2sYob6A.png?auto=webp&s=c8112bd8549501d12e127dd7dbca4f5e04c222dc" style="width:100%;height: 100%" alt="">
+
+                            <figcaption><span class="price"></span>
+                                <h2 class="caption-title">This application lists the current number of cases reported across the globe</h2>
+                            </figcaption>
+                        </figure>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>-->
+
+
+<!------------------ Hover Effect Style : Demo - 3 --------------->
+
+
+<div class="box3">
+    <img src="https://external-preview.redd.it/SiiCZ3v_f6IHj4C5Eyi8EzZhcygX23cuZsRo2sYob6A.png?auto=webp&s=c8112bd8549501d12e127dd7dbca4f5e04c222dc">
+    <div class="box-content">
+        <h3 class="title">Kristiana</h3>
+        <p class="description">
+            This application lists the current number of cases reported across the globe
+        </p>
+    </div>
+
 
 </div>
 
 
 <footer class="bg-light text-center text-lg-start">
 
-    <div class="text-center p-3" style="background-color: rgb(231,217,195)">
-        <p class="fw-normal"> All information you see on this page is taken from this repository
-            <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">Link</a> <!-- open tab when click on link target="_blank"-->
+    <div class="text-center p-3" style="background-color: rgb(245,235,218)">
+        <p class="fw-normal"> All information you see on this page is taken from this
+            <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">repository</a> <!-- open tab when click on link target="_blank"-->
         </p>
         <p class="fw-light"> © 2021 Copyright:
             <a href="https://github.com/faramarzaf" target="_blank">FaramarzAfzali</a>
