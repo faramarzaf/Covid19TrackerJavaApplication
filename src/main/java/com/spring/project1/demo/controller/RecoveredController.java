@@ -10,17 +10,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @Controller
-public class HomeController {
+public class RecoveredController {
 
     @Autowired
     CoronaVirusDataService coronaVirusDataService;
 
-    @GetMapping("/")
-    public String home(Model model) {
+    @GetMapping("/recovered")
+    public String recovered(Model model) {
         prepareHomeData(model);
-        return "home";
+        return "recovered";
     }
-
 
     private void prepareHomeData(Model model) {
         List<LocationStats> allStats = coronaVirusDataService.getAllStats();

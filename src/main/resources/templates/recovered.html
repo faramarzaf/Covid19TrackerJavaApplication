@@ -3,17 +3,83 @@
 <head>
     <title>Coronavirus Tracker Application</title>
     <meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8"/>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/creativetimofficial/tailwind-starter-kit/tailwind.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+
+
 </head>
 
 <body>
 
 <div th:insert="fragments/navbar.html::myNavBar"> </div>
 
-<h1>My First Heading</h1>
-<p>recovered</p>
+
+
+<div class="container">
+
+
+    <p class="fw-normal">This application lists the current number of cases reported across the globe.</p>
+
+    <p class="fw-light"> All information you see on this page is taken from this repository
+        <a href="https://github.com/CSSEGISandData/COVID-19" target="_blank">Link</a> <!-- open tab when click on link target="_blank"-->
+    </p>
+
+
+    <div class="alert alert-success" role="alert">
+        <h1 class="display-4" th:text="${totalReportedCases}"></h1>
+        <hr>
+        <p class="mb-0">Total cases reported as of today.</p>
+    </div>
+
+
+    <div class="alert alert-warning" role="alert">
+        <span>New Cases reported since previous day</span>
+        <span th:text="${totalNewCases}"></span>
+    </div>
+
+
+    <table class="table">
+        <tr>
+            <th>State</th>
+            <th>Country</th>
+            <th>Total cases reported</th>
+            <th>Changes since last day</th>
+        </tr>
+        <tbody id="myTable">
+        <tr th:each="locationStat : ${locationStats}">
+            <td th:text="${locationStat.state}"></td>
+            <td th:text="${locationStat.country}"></td>
+            <td th:text="${locationStat.latestTotalCases}">0</td>
+            <td th:text="${locationStat.diffFromPrevDay}">0</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>
+
 
 </body>
-</html> 
+
+</html>
+

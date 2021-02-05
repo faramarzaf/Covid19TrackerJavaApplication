@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @Controller
-public class HomeController {
+public class CaseController {
 
     @Autowired
     CoronaVirusDataService coronaVirusDataService;
 
-    @GetMapping("/")
-    public String home(Model model) {
+    @GetMapping("/new")
+    public String newcase(Model model) {
         prepareHomeData(model);
-        return "home";
+        return "cases";
     }
 
 
