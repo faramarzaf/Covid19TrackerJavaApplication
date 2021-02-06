@@ -17,17 +17,14 @@ public class CaseController {
 
     @GetMapping("/new")
     public String newcase(Model model) {
-        prepareHomeData(model);
+        prepareCasesData(model);
         return "cases";
     }
 
-
-    private void prepareHomeData(Model model) {
+    private void prepareCasesData(Model model) {
         List<LocationStats> allStats = newCasesDataService.getAllStats();
-
-        int totalReportedCases1 = allStats.stream().mapToInt(stat -> stat.getLatestTotalCases()).sum();// sum() Returns the sum of elements in this stream.
+        int totalReportedCases1 = allStats.stream().mapToInt(stat -> stat.getLatestTotalCases()).sum();
         int totalNewCases1 = allStats.stream().mapToInt(stat -> stat.getDiffFromPrevDay()).sum();
-
         String totalReportedCases = String.format("%,d", totalReportedCases1);
         String totalNewCases = String.format("%,d", totalNewCases1);
 

@@ -17,11 +17,11 @@ public class RecoveredController {
 
     @GetMapping("/recovered")
     public String recovered(Model model) {
-        prepareHomeData(model);
+        prepareReCoveredData(model);
         return "recovered";
     }
 
-    private void prepareHomeData(Model model) {
+    private void prepareReCoveredData(Model model) {
         List<LocationStats> allStats = recoveredDataService.getAllStats();
         int totalReportedRecovered1 = allStats.stream().mapToInt(stat -> stat.getLatestTotalCases()).sum();
         int totalRecoveredToday1 = allStats.stream().mapToInt(stat -> stat.getDiffFromPrevDay()).sum();

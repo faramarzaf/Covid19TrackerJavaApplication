@@ -20,7 +20,6 @@ import java.util.List;
 public class NewCasesDataService {
 
     private static final String VIRUS_DATA_URL = "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv";
-
     private List<LocationStats> allStats = new ArrayList<>();
 
     public List<LocationStats> getAllStats() {
@@ -61,21 +60,6 @@ day of week (0 - 6) (Sunday=0 or 7)
         StringReader csvBodyReader = new StringReader(httpResponse.body());
         Iterable<CSVRecord> records = CSVFormat.DEFAULT.withFirstRecordAsHeader().parse(csvBodyReader);
         for (CSVRecord record : records) {
-
-/*          String state = record.get("Province/State");
-            System.out.println(state);
-            String reg = record.get("Country/Region");
-            String lat = record.get("Lat");
-            String lon = record.get("Long");
-
-            Province/State
-            Country/Region
-            Lat
-            Long
-            These are headers.
-            */
-
-
             LocationStats locationStats = new LocationStats();
             locationStats.setState(record.get("Province/State"));
             locationStats.setCountry(record.get("Country/Region"));
