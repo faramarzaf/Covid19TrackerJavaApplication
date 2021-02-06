@@ -1,6 +1,7 @@
 package com.spring.project1.demo.controller;
 
 import com.spring.project1.demo.data.LocationStats;
+import com.spring.project1.demo.services.DeadDataService;
 import com.spring.project1.demo.services.NewCasesDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,7 +14,7 @@ import java.util.List;
 public class DeadController {
 
     @Autowired
-    NewCasesDataService newCasesDataService;
+    DeadDataService deadDataService;
 
     @GetMapping("/dead")
     public String dead(Model model) {
@@ -24,16 +25,16 @@ public class DeadController {
 
 
     private void prepareHomeData(Model model) {
-        List<LocationStats> allStats = newCasesDataService.getAllStats();
+        List<LocationStats> allStats = deadDataService.getAllStats();
 
-        int totalReportedCases1 = allStats.stream().mapToInt(stat -> stat.getLatestTotalCases()).sum();// sum() Returns the sum of elements in this stream.
-        int totalNewCases1 = allStats.stream().mapToInt(stat -> stat.getDiffFromPrevDay()).sum();
+        int totalReportedDead1 = allStats.stream().mapToInt(stat -> stat.getLatestTotalCases()).sum();// sum() Returns the sum of elements in this stream.
+        int totalDeadToday1 = allStats.stream().mapToInt(stat -> stat.getDiffFromPrevDay()).sum();
 
-        String totalReportedCases = String.format("%,d", totalReportedCases1);
-        String totalNewCases = String.format("%,d", totalNewCases1);
+        String totalReportedDead = String.format("%,d", totalReportedDead1);
+        String totalDeadToday = String.format("%,d", totalDeadToday1);
 
         model.addAttribute("locationStats", allStats);
-        model.addAttribute("totalReportedCases", totalReportedCases);
-        model.addAttribute("totalNewCases", totalNewCases);
+        model.addAttribute("totalReportedDead", totalReportedDead);
+        model.addAttribute("totalDeadToday", totalDeadToday);
     }
 }

@@ -17,29 +17,27 @@
             integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 
-
 </head>
 
 <body>
 
-<div th:insert="fragments/navbar.html::myNavBar"> </div>
+<div th:insert="fragments/navbar.html::myNavBar"></div>
 <div th:insert="fragments/button.html::myButton"></div>
 
 
 <div class="container">
 
 
-
     <div class="alert alert-success" role="alert">
-        <h1 class="display-4" th:text="${totalReportedCases}"></h1>
+        <h1 class="display-4" th:text="${totalReportedDead}"></h1>
         <hr>
-        <p class="mb-0">Total cases reported as of today.</p>
+        <p class="mb-0">Total cases dead as of today.</p>
     </div>
 
 
-    <div class="alert alert-warning" role="alert">
-        <span>New Cases reported since previous day</span>
-        <span th:text="${totalNewCases}"></span>
+    <div class="alert alert-danger" role="alert">
+        <span>Dead cases that reported since previous day</span>
+        <span th:text="${totalDeadToday}"></span>
     </div>
 
 
@@ -47,8 +45,8 @@
         <tr>
             <th>State</th>
             <th>Country</th>
-            <th>Total cases reported</th>
-            <th>Changes since last day</th>
+            <th>Total cases dead reported</th>
+            <th>Dead cases since last day</th>
         </tr>
         <tbody id="myTable">
         <tr th:each="locationStat : ${locationStats}">
