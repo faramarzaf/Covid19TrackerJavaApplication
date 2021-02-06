@@ -23,10 +23,10 @@
 
 
 
-/*********************** Demo - 3 *******************/
+/*********************** Hover effect home *******************/
 .box3 {
     box-shadow: 0 0 3px rgba(0, 0, 0, .3);
-    position: relative
+    position: relative;
 }
 
 .box3 .box-content, .box3:after, .box3:before {

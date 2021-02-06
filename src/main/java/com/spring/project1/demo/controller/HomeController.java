@@ -1,7 +1,7 @@
 package com.spring.project1.demo.controller;
 
 import com.spring.project1.demo.data.LocationStats;
-import com.spring.project1.demo.services.CoronaVirusDataService;
+import com.spring.project1.demo.services.NewCasesDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +13,7 @@ import java.util.List;
 public class HomeController {
 
     @Autowired
-    CoronaVirusDataService coronaVirusDataService;
+    NewCasesDataService newCasesDataService;
 
     @GetMapping("/")
     public String home(Model model) {
@@ -23,7 +23,7 @@ public class HomeController {
 
 
     private void prepareHomeData(Model model) {
-        List<LocationStats> allStats = coronaVirusDataService.getAllStats();
+        List<LocationStats> allStats = newCasesDataService.getAllStats();
 
         int totalReportedCases1 = allStats.stream().mapToInt(stat -> stat.getLatestTotalCases()).sum();// sum() Returns the sum of elements in this stream.
         int totalNewCases1 = allStats.stream().mapToInt(stat -> stat.getDiffFromPrevDay()).sum();
