@@ -19,13 +19,3 @@
     right: 0;
     margin: auto;
 }
-
-
-.nav {
-    background-color: #000 !important;
-}
-
-.nav>li>a {
-    background-color: #666 !important;
-    color: #fff;
-}
