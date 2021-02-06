@@ -3,9 +3,8 @@
     text-align: center;
     background: linear-gradient(65deg, transparent 50%, rgba(3, 78, 136, 0.7) 50%) left no-repeat,
     linear-gradient(0deg, rgba(3, 78, 136, 0.7), rgba(3, 78, 136, 0.7)) 30px 0 no-repeat;
-
+    max-width: 50%;
     background-size: 30px 100%, 100% 100%;
-    width: 200px;
     height: 60px;
     line-height: 60px;
     padding: 0 20px;
@@ -19,7 +18,7 @@
 }
 .myParagraphWidth {
     max-width: 50%;
-    border-radius: 10px;
+
 }
 
 
@@ -109,9 +108,9 @@
 }
 
 .box3 .description {
-    font-size: 20px;
+    font-size: 17px;
     color: #ffffff;
-    margin-left: 26px;
+    margin-left: 28px;
 }
 
 
