@@ -42,13 +42,15 @@
     </div>
 
 
-    <table class="table">
+    <table class="table table-hover">
+        <thead>
         <tr>
             <th>State</th>
             <th>Country</th>
             <th>Total cases recovered</th>
             <th>Recovered since last day</th>
         </tr>
+        </thead>
         <tbody id="myTable">
         <tr th:each="locationStat : ${locationStats}">
             <td th:text="${locationStat.state}"></td>
