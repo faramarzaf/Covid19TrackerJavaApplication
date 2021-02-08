@@ -13,9 +13,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>CoronaVirusTracker</name>
 	<description>Spring Boot web app</description>
-<!--	<properties>
-		<java.version>15</java.version>
-	</properties>-->
+	<properties>
+
+		<!--<java.version>15</java.version>-->
+
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
