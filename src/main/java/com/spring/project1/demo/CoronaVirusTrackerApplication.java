@@ -14,7 +14,10 @@ public class CoronaVirusTrackerApplication {
 //https://www.creative-tim.com/
     //https://www.codeply.com/p/sIIXzlAW3V
 
-
+/**
+ * api covid
+ * https://covid19.mathdro.id/api/confirmed
+ */
     /**
      * chart links
      * http://jsfiddle.net/gh/get/jquery/1.9.1/highslide-software/highcharts.com/tree/master/samples/highcharts/demo/column-basic/
