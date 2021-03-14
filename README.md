@@ -1,5 +1,6 @@
 # Covid19TrackerJavaApplication   
 
+# https://covid19springboot.herokuapp.com/
 
 This is a web-based application built with **Spring-framework** and **(html,css,javascript)**, which is my first experience implementing web applications. 
 What this program does is:
@@ -13,13 +14,3 @@ The owner of the information used in this program is: https://github.com/CSSEGIS
 
 I will be happy if you have any suggestions, tell me or participate in making this program better. 
 
-A few examples of the program
-
-
-<p align="center">
-<img src="https://raw.github.com/faramarzaf/Covid19TrackerJavaApplication/master/screenshots/home2.png" />
-</p>
-
-<p align="center">
-<img src="https://raw.github.com/faramarzaf/Covid19TrackerJavaApplication/master/screenshots/recovered.png" />
-</p>
