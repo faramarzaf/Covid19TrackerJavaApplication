@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
     </head>
 
+<!--
     <nav class="navbar navbar-expand-lg navbar-light" style=" margin-bottom: 0;">
 
         <div class="container-fluid shadow p-3   bg-white rounded" data-spy="affix" data-offset-top="400" id="nav" style="text-align:left;align-items: center; font-weight:bold;font-size:20px">
@@ -40,6 +41,37 @@
 
         </div>
     </nav>
+-->
+
+    <nav class="navbar fixed-top shadow-sm p-3 mb-5 bg-body navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <img src="https://flespi.io/covid19/statics/app-logo-128x128.png" class="center" alt="img" style="width:45px;height:45px;float: left;margin:-2px 5px">
+            <a class="navbar-brand" style="font-size: large; font-weight: bold"  href="/">Coronavirus Tracker Application</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-size: medium; font-weight: bold" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-size: medium; font-weight: bold" href="/new">Cases</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-size: medium; font-weight: bold" href="/recovered">Recovered</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="font-size: medium; font-weight: bold" href="/dead">Dead</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
 
 
 </div>
