@@ -19,3 +19,9 @@
     right: 0;
     margin: auto;
 }
+
+.header {
+    height: 100px;
+    width: 100%;
+    line-height:10; /*change position the text of headers in html files*/
+}
